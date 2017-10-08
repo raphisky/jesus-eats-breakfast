@@ -91,8 +91,9 @@ function selectFoodImg(foodType) {
 
 function spawnFood() {
   foodXCoordinates = [];
+  var spawnBoundaries = $('#game_container').width() - 150;
   $("#game_container").append($newFood);
-  foodPosX = Math.floor(Math.random()*$('#game_container').width()); // set random horizontal position for food
+  foodPosX = Math.floor(Math.random()* spawnBoundaries); // set random horizontal position for food
   foodImg = "url:("+selectFoodImg(foodImgStock)+"),no-repeat,center,center";
   $newFood.css({'background':'url(food.png)','left':foodPosX,'top':'0'});
   // $newFood.css({'background-image':foodImg,'left':foodPosX});
