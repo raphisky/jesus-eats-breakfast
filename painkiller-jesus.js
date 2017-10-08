@@ -67,6 +67,7 @@ $(document).keydown(function(e) {
         else if (foodXCoordinates[1] > jesusBoxLeftPosX && foodXCoordinates[1] < jesusBoxRightPosX && foodBottomPosY >= jesusBoxTopPosY ) {
           successSound.play();
           $('body').css('background-color','black');
+          $('#game_container').css('background-image','url(lightning.png),url(title.png)');
           $newFood.remove();
         }
         else {
