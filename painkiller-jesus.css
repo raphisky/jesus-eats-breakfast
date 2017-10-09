@@ -21,6 +21,16 @@
    height: 100%;;
  }
 
+#instructions {
+  font-family: Courier, sans-serif;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-left: 15px;
+  padding-bottom: 10px;
+  text-align: right;
+}
+
 .newFood {
   width: 130px;
   height: 130px;
