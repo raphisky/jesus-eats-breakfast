@@ -5,6 +5,7 @@
   background-size: cover;
   text-align: center;
   margin-bottom: 0 !important;
+  cursor: url(cursor.gif), default;
  }
 
  h1 {
@@ -31,27 +32,42 @@
 }
 
 .logo {
-  width: 200;
-  height: 120;
+  width: 200px;
+  height: 120px;
   display: block;
   top: 0;
   left: 0;
   position: absolute;
-  z-index: -100;
   background: url(small_logo.png);
+  cursor: pointer;
 
 }
 
  #jesusBox {
+   width: 300px;
+   height: 200px;
+   background-image: url('jesus.png');
+   background-position: bottom;
+   background-size: contain;
+   background-repeat: no-repeat;
    position: absolute;
    bottom: 0;
    left: 300;
-   height: auto;
-   width: auto;
    overflow: auto;
  }
 
  #jesusBox img {
    height: auto;
    width: 300px;
+ }
+
+ #credits {
+   display: none;
+   font-size: 11px;
+   color: #444444;
+   float: right;
+   padding-top: 10px;
+   padding-left: 100px;
+   text-align: left;
+   font-family: Courier, sans-serif;
  }

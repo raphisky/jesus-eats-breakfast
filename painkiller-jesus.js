@@ -3,6 +3,7 @@
 var music = new Audio('vida-loca-compressed.mp3');
 music.play();
 music.volume = 0.2;
+music.loop = true;
 
 var successSound = new Audio('success.wav');
 var failureSound = new Audio('failure.wav');
@@ -28,8 +29,8 @@ var jesusMovementSpeed = 250;
 
 
 // GAME ASSETS
-var jesusMouthClosed;
-var jesusMouthOpen;
+var jesusMouthClosed = 'url(jesus.png)';
+var jesusMouthOpen = 'url(jesus_eating.png)';
 
 $(document).keydown(function(e) {
     switch (e.which) {
@@ -57,7 +58,7 @@ $(document).keydown(function(e) {
         jesusBoxLeftPosX = $jesusBox.position().left;
         jesusBoxRightPosX = $jesusBox.position().left + $jesusBox.width();
         jesusBoxTopPosY = $jesusBox.position().top;
-        $jesusBox.css('background',jesusMouthOpen);
+        $jesusBox.css('background-image',jesusMouthOpen);
         if (foodXCoordinates[0] > jesusBoxLeftPosX && foodXCoordinates[0] < jesusBoxRightPosX && foodBottomPosY >= jesusBoxTopPosY ) {
           successSound.play();
           $('body').css('background-color','black');
@@ -77,8 +78,8 @@ $(document).keydown(function(e) {
         }
         setTimeout(function(){
           $('body').css('background-color','ffa9f0');
-          $('#game_container').css('background-image','url(title.png)')
-          hasMouthOpen = false;
+          $('#game_container').css('background-image','url(title.png)');
+          $jesusBox.css('background-image',jesusMouthClosed);
         }, openMouthLength);
         break;
     }
@@ -121,3 +122,8 @@ function animateFood(a) {
     }
   });
 };
+
+$('.logo').click(function(e) {
+  console.log("click");
+  $('#credits').css('display','inline-block');
+});
