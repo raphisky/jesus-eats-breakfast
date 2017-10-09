@@ -2,6 +2,7 @@
 // SOUND
 var music = new Audio('vida-loca-compressed.mp3');
 music.play();
+music.volume = 0.2;
 
 var successSound = new Audio('success.wav');
 var failureSound = new Audio('failure.wav');
